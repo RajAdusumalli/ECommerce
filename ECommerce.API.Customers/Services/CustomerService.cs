@@ -46,12 +46,12 @@ namespace ECommerce.API.Customers.Services
                     return (true, result, null);
                 }
                 else
-                    return (true, null, "Not found.");
+                    return (false, null, "Not found.");
             }
             catch (Exception ex)
             {
                 _logger?.LogError(ex.ToString());
-                return (true, null, ex.Message);
+                return (false, null, ex.Message);
             }
         }
 
@@ -68,12 +68,12 @@ namespace ECommerce.API.Customers.Services
                     return (true, result, null);
                 }
                 else
-                    return (true, null, "Not found.");
+                    return (false, null, "Not found.");
             }
             catch (Exception ex)
             {
                 _logger?.LogError(ex.ToString());
-                return (true, null, ex.Message);
+                return (false, null, ex.Message);
             }
         }
     }

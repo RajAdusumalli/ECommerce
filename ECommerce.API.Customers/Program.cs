@@ -1,7 +1,19 @@
+using AutoMapper;
+using ECommerce.API.Customers.Db;
+using ECommerce.API.Customers.Interfaces;
+using ECommerce.API.Customers.Profiles;
+using ECommerce.API.Customers.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddAutoMapper(typeof(CustomerProfile));
+builder.Services.AddDbContext<CustomerDbContext>(options =>
+{
+    options.UseInMemoryDatabase("Customers");
+});
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

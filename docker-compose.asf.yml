@@ -28,9 +28,9 @@ services:
     image: radusumalli/ecommerceapisearch:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - Services__Products=http://localhost:19081/lil/products/
-      - Services__Customers=http://localhost:19081/lil/customers/
-      - Services__Orders=http://localhost:19081/lil/orders/
+      - Services__Products=http://localhost:19081/raj/products/
+      - Services__Customers=http://localhost:19081/raj/customers/
+      - Services__Orders=http://localhost:19081/raj/orders/
     ports:
       - "6004:80"
 

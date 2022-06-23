@@ -2,14 +2,14 @@ version: '3.4'
 
 services:
   customers:
-    image: radusumalli/ecommerceapicustomers/latest
+    image: radusumalli/ecommerceapicustomers:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80/http"
 
   orders:
-    image: radusumalli/ecommerceapiorders/latest
+    image: radusumalli/ecommerceapiorders:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
@@ -17,7 +17,7 @@ services:
 
 
   products:
-    image: radusumalli/ecommerceapiproducts/latest
+    image: radusumalli/ecommerceapiproducts:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
@@ -25,7 +25,7 @@ services:
 
 
   search:
-    image: radusumalli/ecommerceapisearch/latest
+    image: radusumalli/ecommerceapisearch:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - Services__Products=http://localhost:19081/lil/products/
